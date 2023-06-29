@@ -3,7 +3,7 @@ import React from "react";
 
 const Title = ({ title }) => {
   return (
-    <Box py={5} textAlign="center">
+    <Box pt={5} pb={5} textAlign="center">
       <Typography
         fontSize={30}
         fontWeight={600}

@@ -6,7 +6,7 @@ import Title from "../home/shared/Title";
 
 const About = () => {
   return (
-    <Container sx={{ py: 2 }}>
+    <Container sx={{}}>
       <Title title="About Me"></Title>
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
