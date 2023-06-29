@@ -1,0 +1,34 @@
+.workstep-card {
+  height: 100%;
+  background: transparent !important;
+  box-shadow: 0px 0px 30px #ffffff10 !important;
+  position: relative;
+  z-index: 1;
+}
+
+.workstep-card::before {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  margin: 20px -10px;
+  text-align: right;
+  content: "</>";
+  color: #ffffff80;
+  background: none;
+  position: absolute;
+  z-index: -1;
+}
+.workstep-card:hover{box-shadow: 0px 0px 30px #ffffff3d !important;}
+
+.workstep-card .expanded {
+  overflow: auto;
+  max-height: 100px;
+}
+
+.workstep-card .read-more-button {
+  color: red;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 10px;
+}

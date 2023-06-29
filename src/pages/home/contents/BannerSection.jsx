@@ -11,7 +11,7 @@ const BannerSection = () => {
       sx={{
         flexGrow: 1,
         background: "transparents",
-        height: "100vh",
+        padding: "50px 0 100px 0",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -28,10 +28,10 @@ const BannerSection = () => {
       >
         <Box
           sx={{
-            width: "150px",
-            height: "150px",
+            width: "200px",
+            height: "200px",
             borderRadius: "100%",
-            border: "1px solid #fff",
+            border: "3px solid #fff",
             overflow: "hidden",
             margin: "20px 0",
           }}
@@ -52,8 +52,26 @@ const BannerSection = () => {
           fontWeight={700}
           sx={{ color: "#fff" }}
         >
-          I'am
-          <span style={{ color: "#34f1d8" }}>
+          Hi, I'am <b style={{ color: "#34f1d8" }}>Imran</b>
+        </Typography>
+        <Typography
+          variant="h4"
+          component="h1"
+          display="flex"
+          flexDirection={isMobile && "column"}
+          alignItems={isMobile && "center"}
+          gap={1}
+          fontWeight={700}
+          pt={2}
+          sx={{ color: "#fff" }}
+        >
+          An{" "}
+          <span style={{ color: "#34f1d8", transform: "rotate(180deg)" }}>
+            &#125;
+          </span>
+          Enthusiastic
+          <span style={{ color: "#34f1d8" }}>&#125;</span>
+          <span style={{ color: "" }}>
             <Typewriter
               options={{
                 strings: ["Designer", "Developer", "Web Programmer"],
@@ -66,16 +84,11 @@ const BannerSection = () => {
 
         <Typography
           variant="body1"
-          sx={{ color: "#ddd", my: 2, textAlign: "center", maxWidth: "800px" }}
+          fontWeight={600}
+          sx={{ color: "#aaa", my: 2, textAlign: "center", maxWidth: "500px" }}
         >
-          I have a strong command of HTML, CSS, SCSS, Bootstrap, Tailwind,
-          React, ES6, Context API, and Axios, enabling me to create captivating
-          web applications. In addition to this, I am well-versed in JavaScript,
-          ExpressJS, REST APIs, JWT, MongoDB, AOS, and React Chat, which
-          empowers me to build dynamic and interactive websites. Moreover, my
-          familiarity with NodeJS, NextJS, React Native, Redux, Material UI,
-          Python, Stripe, and Git equips me with a diverse skill set to tackle
-          various development requirements.
+          I bring ideas to life by crafting intuitive and dynamic web experience
+          with an eye for design and a passion for coding
         </Typography>
         <Button
           variant="outlined"
