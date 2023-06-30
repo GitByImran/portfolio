@@ -5,7 +5,7 @@ import { providerContext } from "../../../provider/Provider";
 import { BiCoffeeTogo } from "react-icons/bi";
 
 const BannerSection = () => {
-  const isMobile = useContext(providerContext);
+  const { isMobile } = useContext(providerContext);
   return (
     <Box
       sx={{
@@ -46,7 +46,6 @@ const BannerSection = () => {
           variant="h4"
           component="h1"
           display="flex"
-          flexDirection={isMobile && "column"}
           alignItems={isMobile && "center"}
           gap={1}
           fontWeight={700}
@@ -54,33 +53,53 @@ const BannerSection = () => {
         >
           Hi, I'am <b style={{ color: "#34f1d8" }}>Imran</b>
         </Typography>
-        <Typography
-          variant="h4"
-          component="h1"
-          display="flex"
-          flexDirection={isMobile && "column"}
-          alignItems={isMobile && "center"}
-          gap={1}
-          fontWeight={700}
-          pt={2}
-          sx={{ color: "#fff" }}
+        <Box
+          style={{
+            display: "flex",
+            gap: isMobile ? 0 : 10,
+            flexDirection: isMobile && "column",
+          }}
         >
-          An{" "}
-          <span style={{ color: "#34f1d8", transform: "rotate(180deg)" }}>
-            &#125;
-          </span>
-          Enthusiastic
-          <span style={{ color: "#34f1d8" }}>&#125;</span>
-          <span style={{ color: "" }}>
-            <Typewriter
-              options={{
-                strings: ["Designer", "Developer", "Web Programmer"],
-                autoStart: true,
-                loop: true,
-              }}
-            />
-          </span>
-        </Typography>
+          <Typography
+            variant="h4"
+            component="h1"
+            display="flex"
+            flexDirection={isMobile && ""}
+            alignItems={isMobile && "center"}
+            gap={1}
+            fontWeight={700}
+            pt={2}
+            sx={{ color: "#fff" }}
+          >
+            An
+            <span style={{ color: "#34f1d8", transform: "rotate(180deg)" }}>
+              &#125;
+            </span>
+            Enthusiastic
+            <span style={{ color: "#34f1d8" }}>&#125;</span>
+          </Typography>
+          <Typography
+            variant="h4"
+            component="h1"
+            display="flex"
+            flexDirection={isMobile && ""}
+            alignItems={isMobile && "center"}
+            gap={1}
+            fontWeight={700}
+            pt={2}
+            sx={{ color: "#fff" }}
+          >
+            <span style={{ color: "" }}>
+              <Typewriter
+                options={{
+                  strings: ["Designer", "Developer", "Web Programmer"],
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
+            </span>
+          </Typography>
+        </Box>
 
         <Typography
           variant="body1"

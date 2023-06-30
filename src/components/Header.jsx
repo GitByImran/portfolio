@@ -94,7 +94,7 @@ const Header = () => {
                 textTransform="uppercase"
                 sx={{ flexGrow: 1, textAlign: isSmScreen ? "right" : "left" }}
               >
-                imran
+                <span>&lt; imran /&gt;</span>
               </Typography>
               <Drawer
                 anchor="left"

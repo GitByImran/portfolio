@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Box,
   Container,
@@ -8,10 +8,22 @@ import {
   Typography,
 } from "@mui/material";
 import { Link } from "react-router-dom";
+import { providerContext } from "../provider/Provider";
 
 const Footer = () => {
+  const { isMobile } = useContext(providerContext);
+
   return (
-    <Container sx={{ py: 5, display: "flex", justifyContent: "space-between" }}>
+    <Container
+      sx={{
+        py: 5,
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: isMobile && "center",
+        flexDirection: isMobile ? "column" : "row",
+        gap: isMobile && 1,
+      }}
+    >
       <Box sx={{ display: "flex", gap: "20px" }}>
         <Link to="" style={{ textDecoration: "none", color: "#fff" }}>
           Home

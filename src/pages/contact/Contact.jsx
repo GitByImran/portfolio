@@ -21,19 +21,18 @@ const Contact = () => {
 
   return (
     <Container>
-      <Container>
-        <Title title="Contact Me"></Title>
-        <Grid
-          container
-          spacing={4}
-          sx={{
-            mt: 0,
-            p: 0,
-          }}
-        >
+      <Title title="Contact Me"></Title>
+      <Container
+        maxWidth="md"
+        sx={{
+          padding: "35px 20px !important",
+          boxShadow: "0 0 25px rgba(255,255,255,10%)",
+        }}
+      >
+        <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
             <div>
-              <Typography variant="h6" color="rgba(255,255,255,70%)">
+              <Typography variant="h6" color="rgba(255,255,255,70%)" mt={1}>
                 If you want to work together on a project or just leave a
                 message, please don't hesitate to contact me via contact
                 information below.
@@ -109,11 +108,14 @@ const Contact = () => {
                   helperText={errors.name && "Name is required"}
                   fullWidth
                   margin="normal"
+                  // variant="standard"
                   InputLabelProps={{
                     style: { color: "white" },
                   }}
                   InputProps={{
-                    style: { color: "white", borderColor: "white" },
+                    style: {
+                      color: "white",
+                    },
                   }}
                 />
                 <TextField
@@ -132,6 +134,7 @@ const Contact = () => {
                   }
                   fullWidth
                   margin="normal"
+                  // variant="standard"
                   InputLabelProps={{
                     style: { color: "white" },
                   }}
@@ -146,6 +149,7 @@ const Contact = () => {
                   helperText={errors.message && "Message is required"}
                   fullWidth
                   margin="normal"
+                  // variant="standard"
                   InputLabelProps={{
                     style: { color: "white" },
                   }}
@@ -156,10 +160,17 @@ const Contact = () => {
                   rows={4}
                 />
                 <Button
-                  type="submit"
-                  variant="contained"
-                  color="primary"
-                  sx={{ my: 2 }}
+                  variant="outlined"
+                  sx={{
+                    my: 2,
+                    color: "#253346",
+                    background: "#fff",
+                    fontWeight: "bold",
+                    "&:hover": {
+                      color: "#fff",
+                      borderColor: "#fff",
+                    },
+                  }}
                 >
                   Send Message
                 </Button>

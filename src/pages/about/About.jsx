@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Grid, Typography, Container, Button } from "@mui/material";
 import WavingHandIcon from "@mui/icons-material/WavingHand";
 import { Link } from "react-router-dom";
 import Title from "../home/shared/Title";
 
 const About = () => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
   return (
     <Container sx={{}}>
-      <Title title="About Me"></Title>
+      <Title title="About Me" />
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
           {/* Left Side: Text */}
@@ -58,7 +64,7 @@ const About = () => {
             >
               LinkedIn
             </Link>
-            or send me and email.
+            or send me an email.
           </Typography>
           <Button
             variant="outlined"
@@ -80,6 +86,24 @@ const About = () => {
         </Grid>
         <Grid item xs={12} md={6}>
           {/* Right Side: Image */}
+          {!imageLoaded && (
+            <Typography
+              variant="body1"
+              color="#fff"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                width: "100%",
+                height: "400px",
+                background: "transparent",
+                color: "#fff",
+                borderRadius: "10px",
+              }}
+            >
+              Image loading...
+            </Typography>
+          )}
           <img
             src="https://i.ibb.co/3hV3q6f/54224615.jpg"
             alt="imran image"
@@ -89,7 +113,9 @@ const About = () => {
               objectFit: "cover",
               objectPosition: "top",
               borderRadius: "10px",
+              display: imageLoaded ? "block" : "none",
             }}
+            onLoad={handleImageLoad}
           />
         </Grid>
       </Grid>
