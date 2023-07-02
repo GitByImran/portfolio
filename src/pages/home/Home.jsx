@@ -6,15 +6,16 @@ import AboutSection from "./contents/AboutSection";
 import WorkstepSection from "./contents/WorkstepSection";
 import SkillSection from "./contents/SkillSection";
 import MessageSection from "./contents/MessageSection";
+import ProjectSection from "./contents/ProjectSection";
 
 const Home = () => {
   return (
     <Container maxWidth="lg" sx={{ marginBottom: 10 }}>
       <BannerSection />
       <IntroSection />
-      {/* <AboutSection /> */}
       <WorkstepSection />
       <SkillSection />
+      <ProjectSection />
       <MessageSection />
     </Container>
   );

@@ -54,6 +54,7 @@ const Contact = () => {
               <Link
                 style={{ textDecoration: "none" }}
                 to="https://www.linkedin.com/in/imranhasanovi95/"
+                target="_blank"
               >
                 <Typography
                   variant="body1"
@@ -65,10 +66,14 @@ const Contact = () => {
                   fontWeight={400}
                   color="rgba(255,255,255,70%)"
                 >
-                  <LinkedInIcon /> .../ to linkedin
+                  <LinkedInIcon /> LinkedIn.com
                 </Typography>
               </Link>
-              <Link style={{ textDecoration: "none" }}>
+              <Link
+                style={{ textDecoration: "none" }}
+                to="https://github.com/GitByImran"
+                target="_blank"
+              >
                 <Typography
                   variant="body1"
                   display="flex"
@@ -79,7 +84,7 @@ const Contact = () => {
                   fontWeight={400}
                   color="rgba(255,255,255,70%)"
                 >
-                  <GitHubIcon /> .../ to github
+                  <GitHubIcon /> Github.com
                 </Typography>
               </Link>
               <Link style={{ textDecoration: "none" }}>

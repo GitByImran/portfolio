@@ -46,7 +46,7 @@ const BannerSection = () => {
           variant="h4"
           component="h1"
           display="flex"
-          alignItems={isMobile && "center"}
+          alignItems={isMobile && "baseline"}
           gap={1}
           fontWeight={700}
           sx={{ color: "#fff" }}
@@ -122,10 +122,26 @@ const BannerSection = () => {
           }}
         >
           <Typography variant="body5" mr={1} sx={{ marginTop: "3px" }}>
+            Download Resume
+          </Typography>{" "}
+        </Button>
+        {/* <Button
+          variant="outlined"
+          sx={{
+            color: "#253346",
+            background: "#fff",
+            fontWeight: "bold",
+            "&:hover": {
+              color: "#fff",
+              borderColor: "#fff",
+            },
+          }}
+        >
+          <Typography variant="body5" mr={1} sx={{ marginTop: "3px" }}>
             Buy me a coffee
           </Typography>{" "}
           <BiCoffeeTogo fontSize={20} />
-        </Button>
+        </Button> */}
       </Grid>
     </Box>
   );

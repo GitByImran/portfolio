@@ -13,6 +13,13 @@ import { providerContext } from "../provider/Provider";
 const Footer = () => {
   const { isMobile } = useContext(providerContext);
 
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <Container
       sx={{
@@ -25,19 +32,31 @@ const Footer = () => {
       }}
     >
       <Box sx={{ display: "flex", gap: "20px" }}>
-        <Link to="" style={{ textDecoration: "none", color: "#fff" }}>
-          Home
+        <Link
+          to="#"
+          style={{ textDecoration: "none", color: "#fff" }}
+          onClick={handleScrollToTop}
+        >
+          Go top
         </Link>
-        <Link to="" style={{ textDecoration: "none", color: "#fff" }}>
+        <Link
+          to="https://github.com/GitByImran"
+          target="_blank"
+          style={{ textDecoration: "none", color: "#fff" }}
+        >
           Github
         </Link>
-        <Link to="" style={{ textDecoration: "none", color: "#fff" }}>
+        <Link
+          to="https://www.linkedin.com/in/imranhasanovi95/"
+          target="_blank"
+          style={{ textDecoration: "none", color: "#fff" }}
+        >
           LinkedIn
         </Link>
-        <Link to="" style={{ textDecoration: "none", color: "#fff" }}>
+        <Link to="/about" style={{ textDecoration: "none", color: "#fff" }}>
           About
         </Link>
-        <Link to="" style={{ textDecoration: "none", color: "#fff" }}>
+        <Link to="/contact" style={{ textDecoration: "none", color: "#fff" }}>
           Contact
         </Link>
       </Box>

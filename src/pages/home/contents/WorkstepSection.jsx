@@ -11,7 +11,7 @@ const WorkstepSection = () => {
   return (
     <div>
       <Container sx={{ padding: "50px 0" }}>
-        <Title title="how i build website - " />
+        <Title title="how i build websites - " />
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6} md={4}>
             <Card className="workstep-card" onContextMenu={handleContextMenu}>

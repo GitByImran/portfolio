@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   Card,
@@ -15,81 +15,12 @@ import {
 } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
-import Title from "../home/shared/Title";
+import { projectsData } from "../../projects/Projects";
+import Title from "../shared/Title";
+
 import { Link } from "react-router-dom";
 
-export const projectsData = [
-  {
-    id: 1,
-    name: "Legend Toy Universe",
-    image:
-      "https://i.ibb.co/z44HRR5/screencapture-legends-toy-universe-web-app-2023-06-30-22-07-52.png",
-    githubLink: "https://github.com/GitByImran/legends-toy-universe.git",
-    liveLink: "https://legends-toy-universe.web.app/",
-    technologies: [
-      "Bootstrap",
-      "Vanilla Css",
-      "React",
-      "Vite",
-      "Express.js",
-      "MongoDB",
-    ],
-    screenShots: [
-      "https://i.ibb.co/7N21ftK/screencapture-legends-toy-universe-web-app-mytoys-2023-07-01-20-25-13.png",
-      "https://i.ibb.co/SB4xwCf/screencapture-legends-toy-universe-web-app-addtoy-2023-07-01-20-24-59.png",
-      "https://i.ibb.co/mvxcVm3/screencapture-legends-toy-universe-web-app-register-2023-07-01-20-21-01.png",
-      "https://i.ibb.co/84jSXsg/screencapture-legends-toy-universe-web-app-login-2023-07-01-20-20-47.png",
-      "https://i.ibb.co/BTH2gGS/screencapture-legends-toy-universe-web-app-2023-07-01-20-23-50.png",
-      "https://i.ibb.co/bFK7Trh/screencapture-legends-toy-universe-web-app-blog-2023-07-01-20-20-24.png",
-      "https://i.ibb.co/D9Twkdg/screencapture-legends-toy-universe-web-app-alltoys-2023-07-01-20-20-08.png",
-      "https://i.ibb.co/GQBRDvg/screencapture-legends-toy-universe-web-app-2023-07-01-20-19-46.png",
-      "https://i.ibb.co/cYFSkdw/screencapture-legends-toy-universe-web-app-2023-06-30-22-07-52.png",
-      "https://i.ibb.co/jrrZMM5/screencapture-legends-toy-universe-web-app-2023-06-30-22-07-52.png",
-      "https://i.ibb.co/2PV10nM/image.png",
-    ],
-  },
-  {
-    id: 2,
-    name: "Foodian",
-    image:
-      "https://i.ibb.co/g3Rn7Wg/screencapture-chef-recipe-hunter-c8ddf-web-app-2023-06-30-22-07-35.png",
-    githubLink: "https://github.com/GitByImran/foodian-client.git",
-    liveLink: "https://chef-recipe-hunter-c8ddf.web.app/",
-    technologies: [
-      "Bootstrap",
-      "Vanilla Css",
-      "React",
-      "Vite",
-      "Express.js",
-      "MongoDB",
-    ],
-    screenShots: [
-      "https://i.ibb.co/SKwKcKf/screencapture-chef-recipe-hunter-c8ddf-web-app-2023-07-01-20-16-15.png",
-      "https://i.ibb.co/mRmprcG/screencapture-chef-recipe-hunter-c8ddf-web-app-blog-2023-07-01-20-16-40.png",
-      "https://i.ibb.co/QHcBZvK/screencapture-chef-recipe-hunter-c8ddf-web-app-2023-07-01-20-18-18.png",
-      "https://i.ibb.co/MNyd5zg/screencapture-chef-recipe-hunter-c8ddf-web-app-login-2023-07-01-20-16-56.png",
-      "https://i.ibb.co/MSYw4Sp/screencapture-chef-recipe-hunter-c8ddf-web-app-register-2023-07-01-20-17-13.png",
-      "https://i.ibb.co/JsDC1Sw/screencapture-chef-recipe-hunter-c8ddf-web-app-recipe-1-2023-07-01-20-18-48.png",
-    ],
-  },
-  {
-    id: 3,
-    name: "Higher Hires",
-    image:
-      "https://i.ibb.co/10kL9vp/screencapture-higherhires-netlify-app-2023-06-30-22-06-57.png",
-    githubLink: "https://github.com/GitByImran/Job-hunter.git",
-    liveLink: "https://higherhires.netlify.app/",
-    technologies: ["Bootstrap", "Vanilla Css", "React", "Vite"],
-    screenShots: [
-      "https://i.ibb.co/10kL9vp/screencapture-higherhires-netlify-app-2023-06-30-22-06-57.png",
-      "https://i.ibb.co/wcq2SqF/screencapture-higherhires-netlify-app-applieds-2023-07-01-20-15-18.png",
-      "https://i.ibb.co/sjN8dBj/screencapture-higherhires-netlify-app-statistics-2023-07-01-20-15-02.png",
-      "https://i.ibb.co/7vjvXmZ/screencapture-higherhires-netlify-app-blogs-2023-07-01-20-15-30.png",
-    ],
-  },
-];
-
-const Projects = () => {
+const ProjectSection = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const isMediumScreen = useMediaQuery(theme.breakpoints.between("sm", "md"));
@@ -230,4 +161,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default ProjectSection;
