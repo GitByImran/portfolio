@@ -1,8 +1,16 @@
-import { Box, CssBaseline, Grid, Typography, Button } from "@mui/material";
+import {
+  Box,
+  CssBaseline,
+  Grid,
+  Typography,
+  Button,
+  Link,
+} from "@mui/material";
 import React, { useContext } from "react";
 import Typewriter from "typewriter-effect";
 import { providerContext } from "../../../provider/Provider";
 import { BiCoffeeTogo } from "react-icons/bi";
+import resume from "../../../assets/resume.pdf";
 
 const BannerSection = () => {
   const { isMobile } = useContext(providerContext);
@@ -109,42 +117,57 @@ const BannerSection = () => {
           I bring ideas to life by crafting intuitive and dynamic web experience
           with an eye for design and a passion for coding
         </Typography>
-        <Button
-          variant="outlined"
+        <Link
+          href={resume}
+          download="imran-resume.pdf"
           sx={{
-            color: "#253346",
-            background: "#fff",
-            fontWeight: "bold",
-            "&:hover": {
-              color: "#fff",
-              borderColor: "#fff",
-            },
+            textDecoration: "none",
           }}
         >
-          <Typography variant="body5" mr={1} sx={{ marginTop: "3px" }}>
-            Download Resume
-          </Typography>{" "}
-        </Button>
-        {/* <Button
-          variant="outlined"
-          sx={{
-            color: "#253346",
-            background: "#fff",
-            fontWeight: "bold",
-            "&:hover": {
-              color: "#fff",
-              borderColor: "#fff",
-            },
-          }}
-        >
-          <Typography variant="body5" mr={1} sx={{ marginTop: "3px" }}>
-            Buy me a coffee
-          </Typography>{" "}
-          <BiCoffeeTogo fontSize={20} />
-        </Button> */}
+          <Button
+            variant="outlined"
+            sx={{
+              color: "#253346",
+              background: "#fff",
+              fontWeight: "bold",
+              "&:hover": {
+                color: "#fff",
+                borderColor: "#fff",
+              },
+            }}
+          >
+            <Typography
+              variant="body5"
+              mr={1}
+              sx={{
+                marginTop: "3px",
+              }}
+            >
+              Download Resume
+            </Typography>
+          </Button>
+        </Link>
       </Grid>
     </Box>
   );
 };
 
 export default BannerSection;
+
+{
+  /* <Link
+  href={resume}
+  download="resume"
+  sx={{
+    fontSize: 16,
+    textDecoration: "none",
+    color: "#253346",
+    textTransform: "capitalize !important",
+    "&:hover": {
+      color: "#fff",
+    },
+  }}
+>
+  Download Resume
+</Link> */
+}
