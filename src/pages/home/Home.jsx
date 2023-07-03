@@ -5,7 +5,7 @@ import IntroSection from "./contents/IntroSection";
 import AboutSection from "./contents/AboutSection";
 import WorkstepSection from "./contents/WorkstepSection";
 import SkillSection from "./contents/SkillSection";
-import MessageSection from "./contents/MessageSection";
+import FeedbackSection from "./contents/FeedbackSection";
 import ProjectSection from "./contents/ProjectSection";
 
 const Home = () => {
@@ -16,7 +16,7 @@ const Home = () => {
       <WorkstepSection />
       <SkillSection />
       <ProjectSection />
-      <MessageSection />
+      <FeedbackSection />
     </Container>
   );
 };
