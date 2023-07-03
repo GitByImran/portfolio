@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { Container, Grid, Typography, TextField, Button } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -10,6 +10,7 @@ import Title from "../home/shared/Title";
 import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const Contact = () => {
   const form = useRef();
@@ -57,8 +58,15 @@ const Contact = () => {
       );
   };
 
+  // useEffect(() => {
+  //   document.title = "Contact - Imran";
+  // }, []);
+
   return (
     <Container>
+      <Helmet>
+        <title>Contact - Imran</title>
+      </Helmet>
       <Title title="Contact Me"></Title>
       <Container
         maxWidth="md"

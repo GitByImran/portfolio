@@ -13,10 +13,11 @@ import {
 } from "@mui/material";
 import { AiOutlineHtml5 } from "react-icons/ai";
 import { BsBootstrap } from "react-icons/bs";
-import { BiLogoTailwindCss } from "react-icons/bi";
+import { BiLogoTailwindCss, BiLogoFirebase } from "react-icons/bi";
 import { DiSass, DiCss3Full } from "react-icons/di";
-import { FaNodeJs, FaReact } from "react-icons/fa";
-import { RiJavascriptFill } from "react-icons/ri";
+import { FaNodeJs, FaReact, FaGitAlt } from "react-icons/fa";
+import { FiFigma } from "react-icons/fi";
+import { RiJavascriptFill, RiToolsLine } from "react-icons/ri";
 import {
   SiMailgun,
   SiRedux,
@@ -25,8 +26,9 @@ import {
   SiMongodb,
   SiExpress,
   SiMui,
+  SiGnubash,
 } from "react-icons/si";
-import { TbBrandNextjs } from "react-icons/tb";
+import { TbBrandNextjs, TbBrandVscode } from "react-icons/tb";
 import { providerContext } from "../../../provider/Provider";
 
 import Title from "../shared/Title";
@@ -83,7 +85,7 @@ const FrontendSection = () => {
           justifyContent: "center",
           alignItems: "center",
           flexWrap: "wrap",
-          gap: "30px",
+          gap: "50px",
         }}
       >
         {frontendData.map((item, index) => (
@@ -107,16 +109,20 @@ const FrontendSection = () => {
 const BackendSection = () => {
   const backendData = [
     {
-      icon: <RiJavascriptFill fontSize={75} color="#E8D44D" />,
-      label: "Javascript",
-    },
-    {
       icon: <FaNodeJs fontSize={75} color="#83C532" />,
       label: "NodeJS",
     },
     {
       icon: <SiExpress fontSize={75} color="#ffffff" />,
       label: "ExpressJS",
+    },
+    {
+      icon: <BiLogoFirebase fontSize={75} color="#F7C427" />,
+      label: "Firebase",
+    },
+    {
+      icon: <SiMongodb fontSize={75} color="#1F8630" />,
+      label: "MongoDB",
     },
   ];
 
@@ -128,7 +134,7 @@ const BackendSection = () => {
           justifyContent: "center",
           alignItems: "center",
           flexWrap: "wrap",
-          gap: "30px",
+          gap: "50px",
         }}
       >
         {backendData.map((item, index) => (
@@ -152,7 +158,19 @@ const BackendSection = () => {
 const DatabaseSection = () => {
   const databaseData = [
     {
-      icon: <SiMongodb fontSize={75} color="#1F8630" />,
+      icon: <TbBrandVscode fontSize={75} color="#2D9EEA" />,
+      label: "MongoDB",
+    },
+    {
+      icon: <SiGnubash fontSize={75} color="#fff" />,
+      label: "MongoDB",
+    },
+    {
+      icon: <FiFigma fontSize={75} color="#F76F5E" />,
+      label: "MongoDB",
+    },
+    {
+      icon: <FaGitAlt fontSize={75} color="#E84D31" />,
       label: "MongoDB",
     },
   ];
@@ -165,7 +183,7 @@ const DatabaseSection = () => {
           justifyContent: "center",
           alignItems: "center",
           flexWrap: "wrap",
-          gap: "30px",
+          gap: "50px",
         }}
       >
         {databaseData.map((item, index) => (
@@ -231,8 +249,8 @@ const SkillSection = () => {
             sx={{ color: "#fff" }}
           />
           <Tab
-            label="Database"
-            icon={<FaReact fontSize={20} />}
+            label="Tools"
+            icon={<RiToolsLine fontSize={20} />}
             sx={{ color: "#fff" }}
           />
         </Tabs>

@@ -119,7 +119,19 @@ const MessageSection = () => {
           multiline
           rows={4}
         />
-        <Button type="submit" variant="contained" color="primary" fullWidth>
+        <Button
+          type="submit"
+          variant="contained"
+          fullWidth
+          sx={{
+            background: "#253346 !important",
+            color: "#34f1d8 !important",
+            "&:hover": {
+              background: "transparent !important",
+              color: "#253346 !important",
+            },
+          }}
+        >
           Send
         </Button>
       </form>

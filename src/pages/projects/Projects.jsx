@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Container,
   Card,
@@ -17,6 +17,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 import Title from "../home/shared/Title";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 export const projectsData = [
   {
@@ -26,6 +27,8 @@ export const projectsData = [
       "https://i.ibb.co/z44HRR5/screencapture-legends-toy-universe-web-app-2023-06-30-22-07-52.png",
     githubLink: "https://github.com/GitByImran/legends-toy-universe.git",
     liveLink: "https://legends-toy-universe.web.app/",
+    summary:
+      "This single-page application serves as a platform to showcase action series toys from popular franchises like Marvel, Star Wars, DC, and Guardians. It offers several routes for navigation, including the Home page, which displays toys organized by categories using tabs. The All Toys page provides a comprehensive collection of toys added by different users. Users who are logged in have the option to add their own toys for sale through the Add Toy page. The My Toys page allows logged-in users to manage and view their personal collection of added toys. Additionally, the application features a blog page for relevant content. Overall this application provides a convenient and immersive experience for toy enthusiasts to explore, contribute, and interact with the action series toy community.",
     technologies: [
       "Bootstrap",
       "Vanilla Css",
@@ -55,6 +58,8 @@ export const projectsData = [
       "https://i.ibb.co/g3Rn7Wg/screencapture-chef-recipe-hunter-c8ddf-web-app-2023-06-30-22-07-35.png",
     githubLink: "https://github.com/GitByImran/foodian-client.git",
     liveLink: "https://chef-recipe-hunter-c8ddf.web.app/",
+    summary:
+      "This single-page React application provides an immersive experience for users to explore chef recipes from a specific cuisine. It offers features such as user authentication, responsive design, lazy loading, a custom 404 page, a fun PDF creation, and a blogs page. These features showcase the power and versatility of React in building dynamic web applications.",
     technologies: [
       "Bootstrap",
       "Vanilla Css",
@@ -80,6 +85,8 @@ export const projectsData = [
     githubLink: "https://github.com/GitByImran/Job-hunter.git",
     liveLink: "https://higherhires.netlify.app/",
     technologies: ["Bootstrap", "Vanilla Css", "React", "Vite"],
+    summary:
+      "This single-page application consists of various routes for navigation. The default Home route includes a banner, job category list, and a featured job list. The Statistics route presents assignment names and marks in an area chart format. The Applied route displays a list of applied jobs and their overviews, with the ability to filter by job type. The Blogs route provides a Q&A page. Lastly, the Details route is dynamic and allows users to view job details and apply for jobs, adding them to the applied job list. Overall, this application offers a seamless user experience with different routes catering to specific functionalities and information display.",
     screenShots: [
       "https://i.ibb.co/10kL9vp/screencapture-higherhires-netlify-app-2023-06-30-22-06-57.png",
       "https://i.ibb.co/wcq2SqF/screencapture-higherhires-netlify-app-applieds-2023-07-01-20-15-18.png",
@@ -93,6 +100,9 @@ const Projects = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const isMediumScreen = useMediaQuery(theme.breakpoints.between("sm", "md"));
+  //   useEffect(() => {
+  //   document.title = "About - Imran";
+  // }, []);
 
   let itemsPerRow;
   if (isSmallScreen) {
@@ -105,6 +115,9 @@ const Projects = () => {
 
   return (
     <Container>
+      <Helmet>
+        <title>Projects - Imran</title>
+      </Helmet>
       <Title title="My Projects"></Title>
       <Grid container spacing={2}>
         {projectsData.map((project) => (

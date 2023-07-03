@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Grid, Typography, Container, Button } from "@mui/material";
 import WavingHandIcon from "@mui/icons-material/WavingHand";
 import { Link } from "react-router-dom";
 import Title from "../home/shared/Title";
+import { Helmet } from "react-helmet";
 
 const About = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -10,9 +11,15 @@ const About = () => {
   const handleImageLoad = () => {
     setImageLoaded(true);
   };
+  // useEffect(() => {
+  //   document.title = "About - Imran";
+  // }, []);
 
   return (
     <Container sx={{}}>
+      <Helmet>
+        <title>About - Imran</title>
+      </Helmet>
       <Title title="About Me" />
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>

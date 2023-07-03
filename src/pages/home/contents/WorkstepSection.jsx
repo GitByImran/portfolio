@@ -2,6 +2,9 @@ import { Card, CardContent, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import "../Home.css";
 import Title from "../shared/Title";
+import Aos from "aos";
+import "aos/dist/aos.css";
+Aos.init();
 
 const WorkstepSection = () => {
   const handleContextMenu = (event) => {
@@ -9,7 +12,7 @@ const WorkstepSection = () => {
   };
 
   return (
-    <div>
+    <div data-aos="fade-up" data-aos-duration="1000">
       <Container sx={{ padding: "50px 0" }}>
         <Title title="how i build websites - " />
         <Grid container spacing={3}>

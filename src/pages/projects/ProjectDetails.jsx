@@ -14,6 +14,7 @@ import {
   Button,
 } from "@mui/material";
 import { projectsData } from "./Projects";
+import { Helmet } from "react-helmet";
 
 const ProjectDetails = () => {
   const { id } = useParams();
@@ -37,6 +38,9 @@ const ProjectDetails = () => {
 
   return (
     <Container maxWidth="md" sx={{ marginTop: "2rem" }}>
+      <Helmet>
+        <title>Project ({project.name}) - Imran</title>
+      </Helmet>
       <Card sx={{ background: "none", boxShadow: "none !important" }}>
         <CardMedia
           component="img"
@@ -61,7 +65,7 @@ const ProjectDetails = () => {
           >
             {project.name}
           </Typography>
-          <Typography variant="body2" color="#fff" mb={2}>
+          <Typography variant="body1" color="#fff" mb={2}>
             Technologies Used:
           </Typography>
           <Box sx={{ display: "flex", gap: "0.5rem" }}>
@@ -80,9 +84,14 @@ const ProjectDetails = () => {
               </Typography>
             ))}
           </Box>
-          <Typography variant="body2" color="#fff" mt={2}>
-            Description:
-          </Typography>
+          <Box sx={{ mt: 2 }}>
+            <Typography variant="body1" color="#fff" mt={2}>
+              About this website :
+            </Typography>
+            <Typography variant="body1" color="#aaa" mt={1}>
+              {project.summary}
+            </Typography>
+          </Box>
           <Typography variant="h5" color="#aaa" fontWeight="bold" mt={2}>
             Screenshots :
           </Typography>

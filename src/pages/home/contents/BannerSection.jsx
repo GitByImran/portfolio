@@ -19,7 +19,7 @@ const BannerSection = () => {
       sx={{
         flexGrow: 1,
         background: "transparents",
-        padding: "50px 0 100px 0",
+        padding: isMobile ? "100px 0" : "50px 0 100px 0",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -39,15 +39,15 @@ const BannerSection = () => {
             width: "200px",
             height: "200px",
             borderRadius: "100%",
-            border: "3px solid #fff",
+            border: "5px solid #fff",
             overflow: "hidden",
             margin: "20px 0",
           }}
         >
           <img
             style={{ height: "100%", width: "100%", objectFit: "cover" }}
-            src="https://i.ibb.co/Mh36tkG/20230626-231812.png"
-            alt=""
+            src="https://i.ibb.co/CtT2YKM/20230626-231812.png"
+            alt="imran_profile"
           />
         </Box>
         <Typography
