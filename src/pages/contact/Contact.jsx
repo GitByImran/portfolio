@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { Container, Grid, Typography, TextField, Button } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
 import EmailIcon from "@mui/icons-material/Email";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import Title from "../home/shared/Title";
 import { Link } from "react-router-dom";
+import emailjs from "@emailjs/browser";
+import Swal from "sweetalert2";
 
 const Contact = () => {
+  const form = useRef();
   const {
     register,
     handleSubmit,
@@ -16,7 +20,41 @@ const Contact = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    sendEmail(data);
+  };
+
+  const sendEmail = (formData) => {
+    emailjs
+      .sendForm(
+        "service_jsznqq4",
+        "template_m2c49c9",
+        form.current,
+        "QHbRAeqqNQmNdvPu6"
+      )
+      .then(
+        (result) => {
+          if (result.text === "OK") {
+            form.current.reset();
+            Swal.fire({
+              title:
+                "I have got your email, thanks for visiting my website and try to contact.You will be emailed shortly to chat",
+              width: 600,
+              padding: "3em",
+              color: "#34f1d8",
+              background: "#253346",
+              backdrop: `
+                rgba(0,0,0,.6)
+                url("/images/nyan-cat.gif")
+                left top
+                no-repeat
+              `,
+            });
+          }
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
 
   return (
@@ -37,7 +75,10 @@ const Contact = () => {
                 message, please don't hesitate to contact me via contact
                 information below.
               </Typography>
-              <Link style={{ textDecoration: "none" }}>
+              <Link
+                to="mailto:imran.h.ovi.95@gmail.com"
+                style={{ textDecoration: "none" }}
+              >
                 <Typography
                   variant="body1"
                   display="flex"
@@ -87,7 +128,11 @@ const Contact = () => {
                   <GitHubIcon /> Github.com
                 </Typography>
               </Link>
-              <Link style={{ textDecoration: "none" }}>
+              <Link
+                to="https://wa.me/qr/C7IR5Q6I64YGL1"
+                style={{ textDecoration: "none" }}
+                target="_blank"
+              >
                 <Typography
                   variant="body1"
                   display="flex"
@@ -98,16 +143,31 @@ const Contact = () => {
                   fontWeight={400}
                   color="rgba(255,255,255,70%)"
                 >
-                  <PhoneInTalkIcon /> 123-456-7890
+                  <WhatsAppIcon /> Whatsapp
+                </Typography>
+              </Link>
+              <Link to="tel:+8801851442405" style={{ textDecoration: "none" }}>
+                <Typography
+                  variant="body1"
+                  display="flex"
+                  alignItems="center"
+                  gap={1}
+                  my={2}
+                  fontSize={20}
+                  fontWeight={400}
+                  color="rgba(255,255,255,70%)"
+                >
+                  <PhoneInTalkIcon /> +88 01851442405
                 </Typography>
               </Link>
             </div>
           </Grid>
           <Grid item xs={12} md={6}>
             <div>
-              <form onSubmit={handleSubmit(onSubmit)}>
+              <form ref={form} onSubmit={handleSubmit(onSubmit)}>
                 <TextField
                   label="Name"
+                  name="name"
                   {...register("name", { required: true })}
                   error={!!errors.name}
                   helperText={errors.name && "Name is required"}
@@ -125,6 +185,7 @@ const Contact = () => {
                 />
                 <TextField
                   label="Email"
+                  name="email"
                   {...register("email", {
                     required: true,
                     pattern: /^\S+@\S+$/i,
@@ -149,6 +210,7 @@ const Contact = () => {
                 />
                 <TextField
                   label="Message"
+                  name="message"
                   {...register("message", { required: true })}
                   error={!!errors.message}
                   helperText={errors.message && "Message is required"}
@@ -165,6 +227,7 @@ const Contact = () => {
                   rows={4}
                 />
                 <Button
+                  type="submit"
                   variant="outlined"
                   sx={{
                     my: 2,

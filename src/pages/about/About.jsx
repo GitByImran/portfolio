@@ -66,23 +66,25 @@ const About = () => {
             </Link>
             or send me an email.
           </Typography>
-          <Button
-            variant="outlined"
-            sx={{
-              my: 2,
-              color: "#253346",
-              background: "#fff",
-              fontWeight: "bold",
-              "&:hover": {
-                color: "#fff",
-                borderColor: "#fff",
-              },
-            }}
-          >
-            <Typography variant="body5" sx={{ marginTop: "3px" }}>
-              Contact me
-            </Typography>
-          </Button>
+          <Link to="/contact">
+            <Button
+              variant="outlined"
+              sx={{
+                my: 2,
+                color: "#253346",
+                background: "#fff",
+                fontWeight: "bold",
+                "&:hover": {
+                  color: "#fff",
+                  borderColor: "#fff",
+                },
+              }}
+            >
+              <Typography variant="body5" sx={{ marginTop: "3px" }}>
+                Contact me
+              </Typography>
+            </Button>
+          </Link>
         </Grid>
         <Grid item xs={12} md={6}>
           {/* Right Side: Image */}

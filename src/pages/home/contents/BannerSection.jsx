@@ -154,20 +154,3 @@ const BannerSection = () => {
 
 export default BannerSection;
 
-{
-  /* <Link
-  href={resume}
-  download="resume"
-  sx={{
-    fontSize: 16,
-    textDecoration: "none",
-    color: "#253346",
-    textTransform: "capitalize !important",
-    "&:hover": {
-      color: "#fff",
-    },
-  }}
->
-  Download Resume
-</Link> */
-}

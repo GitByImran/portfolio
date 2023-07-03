@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import {
   Container,
   Typography,
@@ -11,6 +11,7 @@ import {
   Dialog,
   DialogContent,
   DialogTitle,
+  Button,
 } from "@mui/material";
 import { projectsData } from "./Projects";
 
@@ -108,6 +109,23 @@ const ProjectDetails = () => {
           </Grid>
         </CardContent>
       </Card>
+      <Button
+        component={Link}
+        to="/projects"
+        variant="outlined"
+        sx={{
+          m: 2,
+          color: "#253346",
+          background: "#fff",
+          fontWeight: "bold",
+          "&:hover": {
+            color: "#fff",
+            borderColor: "#fff",
+          },
+        }}
+      >
+        Go back to projects
+      </Button>
       <Dialog
         open={lightboxOpen}
         onClose={closeLightbox}
