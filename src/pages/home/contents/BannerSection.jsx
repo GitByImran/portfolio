@@ -46,7 +46,7 @@ const BannerSection = () => {
         >
           <img
             style={{ height: "100%", width: "100%", objectFit: "cover" }}
-            src="https://i.ibb.co/CtT2YKM/20230626-231812.png"
+            src="/profile.png"
             alt="imran_profile"
           />
         </Box>

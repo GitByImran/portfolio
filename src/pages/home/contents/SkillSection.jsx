@@ -13,11 +13,12 @@ import {
 } from "@mui/material";
 import { AiOutlineHtml5 } from "react-icons/ai";
 import { BsBootstrap } from "react-icons/bs";
-import { BiLogoTailwindCss, BiLogoFirebase } from "react-icons/bi";
+import { BiLogoTailwindCss, BiLogoFirebase, BiLogoTypescript } from "react-icons/bi";
 import { DiSass, DiCss3Full } from "react-icons/di";
-import { FaNodeJs, FaReact, FaGitAlt } from "react-icons/fa";
+import { FaNodeJs, FaReact, FaGitAlt, FaGithub } from "react-icons/fa";
 import { FiFigma } from "react-icons/fi";
 import { RiJavascriptFill, RiToolsLine } from "react-icons/ri";
+import { SiMongoose } from "react-icons/si";
 import {
   SiMailgun,
   SiRedux,
@@ -62,6 +63,10 @@ const FrontendSection = () => {
     {
       icon: <RiJavascriptFill fontSize={75} color="#E8D44D" />,
       label: "Javascript",
+    },
+    {
+      icon: <BiLogoTypescript fontSize={75} color="#07B0CE" />,
+      label: "Typescript",
     },
     {
       icon: <FaReact fontSize={75} color="#04D0F3" />,
@@ -124,6 +129,10 @@ const BackendSection = () => {
       icon: <SiMongodb fontSize={75} color="#1F8630" />,
       label: "MongoDB",
     },
+    {
+      icon: <SiMongoose fontSize={75} color="#E84D31" />,
+      label: "Mongoose",
+    },
   ];
 
   return (
@@ -159,19 +168,23 @@ const DatabaseSection = () => {
   const databaseData = [
     {
       icon: <TbBrandVscode fontSize={75} color="#2D9EEA" />,
-      label: "MongoDB",
+      label: "VS Code",
     },
     {
       icon: <SiGnubash fontSize={75} color="#fff" />,
-      label: "MongoDB",
+      label: "Bash",
     },
     {
       icon: <FiFigma fontSize={75} color="#F76F5E" />,
-      label: "MongoDB",
+      label: "Figma",
     },
     {
       icon: <FaGitAlt fontSize={75} color="#E84D31" />,
-      label: "MongoDB",
+      label: "Git",
+    },
+    {
+      icon: <FaGithub fontSize={75} color="#E84D31" />,
+      label: "Github",
     },
   ];
 

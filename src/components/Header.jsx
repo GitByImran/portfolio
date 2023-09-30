@@ -5,7 +5,6 @@ import {
   Toolbar,
   IconButton,
   Typography,
-  Drawer,
   List,
   ListItem,
   ListItemText,
@@ -13,6 +12,8 @@ import {
   Container,
   useMediaQuery,
   useTheme,
+  Menu,
+  MenuItem,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import "../index.css";
@@ -20,13 +21,18 @@ import "../index.css";
 const Header = () => {
   const theme = useTheme();
   const isSmScreen = useMediaQuery(theme.breakpoints.down("sm"));
-  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [dropdownOpen, setdropdownOpen] = useState(false);
   const [activePath, setActivePath] = useState("");
   const location = useLocation();
 
-  const handleDrawerToggle = () => {
-    setDrawerOpen(!drawerOpen);
-  };
+  const handleDropdown = () => {
+    setdropdownOpen(true)
+  }
+
+  const handleClose = () => {
+    setdropdownOpen(false)
+  }
+
 
   useEffect(() => {
     setActivePath(location.pathname);
@@ -82,7 +88,7 @@ const Header = () => {
                 edge="start"
                 color="inherit"
                 aria-label="menu"
-                onClick={handleDrawerToggle}
+                  onClick={handleDropdown}
                 sx={{ marginRight: 2 }}
               >
                 <MenuIcon />
@@ -96,14 +102,24 @@ const Header = () => {
               >
                 <span>&lt; imran /&gt;</span>
               </Typography>
-              <Drawer
-                anchor="left"
-                open={drawerOpen}
-                onClose={handleDrawerToggle}
-                sx={{ width: 250 }}
-              >
-                <List>{renderMenuLinks()}</List>
-              </Drawer>
+                <Menu
+                  id="basic-menu"
+                  anchorEl={dropdownOpen}
+                  open={dropdownOpen}
+                  onClose={handleClose}
+                  MenuListProps={{
+                    'aria-labelledby': 'basic-button',
+                  }}
+                  className="dropdown-menu"
+                >
+                  {menuLinks.map((menu, index) =>
+                    <MenuItem key={index} onClick={handleClose}>
+                      <NavLink to={menu.path} style={{ textDecoration: 'none', color: 'inherit' }}>
+                        {menu.label}
+                      </NavLink>
+                    </MenuItem>
+                  )}
+                </Menu>
             </>
           )}
         </Container>

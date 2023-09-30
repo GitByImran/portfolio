@@ -15,6 +15,7 @@ import {
 } from "@mui/material";
 import { projectsData } from "./Projects";
 import { Helmet } from "react-helmet";
+import { useEffect } from "react";
 
 const ProjectDetails = () => {
   const { id } = useParams();
@@ -36,6 +37,10 @@ const ProjectDetails = () => {
     setLightboxOpen(false);
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Container maxWidth="md" sx={{ marginTop: "2rem" }}>
       <Helmet>
@@ -54,6 +59,7 @@ const ProjectDetails = () => {
             borderRadius: "5px !important",
             border: "5px solid #fff",
           }}
+          loading="lazy"
         />
         <CardContent>
           <Typography
@@ -111,6 +117,7 @@ const ProjectDetails = () => {
                       objectPosition: "top",
                       cursor: "pointer",
                     }}
+                    loading="lazy"
                   />
                 </Card>
               </Grid>
@@ -152,6 +159,7 @@ const ProjectDetails = () => {
               height: "100%",
               objectFit: "contain",
             }}
+            loading="lazy"
           />
         </DialogContent>
       </Dialog>
@@ -160,3 +168,7 @@ const ProjectDetails = () => {
 };
 
 export default ProjectDetails;
+
+
+
+

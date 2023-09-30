@@ -10,9 +10,7 @@ import ProjectSection from "./contents/ProjectSection";
 import { Helmet } from "react-helmet";
 
 const Home = () => {
-  //   useEffect(() => {
-  //   document.title = "Home - Imran";
-  // }, []);
+
   return (
     <Container maxWidth="lg" sx={{ marginBottom: 10 }}>
       <Helmet>

@@ -22,6 +22,33 @@ import { Helmet } from "react-helmet";
 export const projectsData = [
   {
     id: 1,
+    name: "Ilecsy",
+    image:
+      "https://i.ibb.co/SfdxMxR/screencapture-ilecsy-web-app-2023-08-23-11-00-15.png",
+    githubLink: "https://github.com/GitByImran/ilecsy-client",
+    liveLink: "https://ilecsy.web.app/",
+    summary:
+      "This single-page full stack web application for B2C based product sell.",
+    technologies: [
+      'Material UI', 'Vite', 'ReactJs', 'ExpressJs', 'MongoDb', 'Stripe', 'Firebase', 'Vercel'
+    ],
+    screenShots: [
+      "https://i.ibb.co/tcqbFG5/screencapture-ilecsy-web-app-2023-08-23-11-13-30.png",
+      "https://i.ibb.co/ZMqm4cn/screencapture-ilecsy-web-app-2023-08-23-11-27-45.png",
+      "https://i.ibb.co/xsqvRpW/screencapture-ilecsy-web-app-signin-2023-08-23-11-13-44.png",
+      "https://i.ibb.co/ngLBV4c/screencapture-ilecsy-web-app-signup-2023-08-23-11-14-08.png",
+      "https://i.ibb.co/Q9RQxPr/image.png",
+      "https://i.ibb.co/jDZQc1c/image.png",
+      "https://i.ibb.co/0DnDdPm/image.png",
+      "https://i.ibb.co/KqcK4cF/image.png",
+      "https://i.ibb.co/HCVW1qf/image.png",
+      "https://i.ibb.co/QcjDrBS/image.png",
+      "https://i.ibb.co/1zdYLnc/image.png",
+      "https://i.ibb.co/gwRk1wj/image.png",
+    ],
+  },
+  {
+    id: 2,
     name: "Legend Toy Universe",
     image:
       "https://i.ibb.co/z44HRR5/screencapture-legends-toy-universe-web-app-2023-06-30-22-07-52.png",
@@ -32,10 +59,10 @@ export const projectsData = [
     technologies: [
       "Bootstrap",
       "Vanilla Css",
-      "React",
-      "Vite",
-      "Express.js",
+      "ReactJs",
+      "Expressjs",
       "MongoDB",
+      "Vite",
     ],
     screenShots: [
       "https://i.ibb.co/7N21ftK/screencapture-legends-toy-universe-web-app-mytoys-2023-07-01-20-25-13.png",
@@ -52,7 +79,7 @@ export const projectsData = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     name: "Foodian",
     image:
       "https://i.ibb.co/g3Rn7Wg/screencapture-chef-recipe-hunter-c8ddf-web-app-2023-06-30-22-07-35.png",
@@ -78,7 +105,7 @@ export const projectsData = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     name: "Higher Hires",
     image:
       "https://i.ibb.co/10kL9vp/screencapture-higherhires-netlify-app-2023-06-30-22-06-57.png",
@@ -144,6 +171,7 @@ const Projects = () => {
                       objectPosition: "bottom",
                     },
                   }}
+                  loading="lazy"
                 />
               </Box>
               <CardContent>
@@ -165,7 +193,7 @@ const Projects = () => {
                   alignItems="center"
                   gap={1}
                 >
-                  {project.technologies.map((technology, index) => (
+                  {project.technologies.slice(0, 6).map((technology, index) => (
                     <span
                       key={index}
                       style={{

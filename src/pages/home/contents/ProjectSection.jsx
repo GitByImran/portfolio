@@ -41,7 +41,7 @@ const ProjectSection = () => {
       <Container>
         <Title title="My Projects"></Title>
         <Grid container spacing={2}>
-          {projectsData.map((project) => (
+          {projectsData.slice(0, 3).map((project) => (
             <Grid item xs={12} sm={6} md={4} key={project.id}>
               <Card
                 sx={{
@@ -65,6 +65,7 @@ const ProjectSection = () => {
                         objectPosition: "bottom",
                       },
                     }}
+                    loading="lazy"
                   />
                 </Box>
                 <CardContent>
@@ -86,7 +87,7 @@ const ProjectSection = () => {
                     alignItems="center"
                     gap={1}
                   >
-                    {project.technologies.map((technology, index) => (
+                    {project.technologies.slice(0, 6).map((technology, index) => (
                       <span
                         key={index}
                         style={{
