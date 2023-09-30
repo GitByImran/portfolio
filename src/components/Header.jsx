@@ -111,6 +111,12 @@ const Header = () => {
                     'aria-labelledby': 'basic-button',
                   }}
                   className="dropdown-menu"
+                  sx={{
+                    '& .MuiPaper-elevation': {
+                      top: '50px !important',
+                      left: ' 30px!important'
+                    },
+                  }}
                 >
                   {menuLinks.map((menu, index) =>
                     <MenuItem key={index} onClick={handleClose}>
