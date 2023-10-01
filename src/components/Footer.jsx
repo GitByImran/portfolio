@@ -31,7 +31,7 @@ const Footer = () => {
         gap: isMobile && 1,
       }}
     >
-      <Box sx={{ display: "flex", gap: "20px" }}>
+      <Box sx={{ display: "flex", gap: "20px", flexWrap: 'wrap', justifyContent: 'center' }}>
         <Link
           to="#"
           style={{ textDecoration: "none", color: "#fff" }}
@@ -58,6 +58,9 @@ const Footer = () => {
         </Link>
         <Link to="/contact" style={{ textDecoration: "none", color: "#fff" }}>
           Contact
+        </Link>
+        <Link to="https://drive.google.com/file/d/1NpZ_jE2oiQdhaoPNh2GsVRGKm3A1V50f/view?usp=sharing" target="_blank" style={{ textDecoration: "none", color: "#fff" }}>
+          Achievements
         </Link>
       </Box>
       <Box>
